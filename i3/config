@@ -174,9 +174,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 set $bg-color            #2f343f
-set $active-bg-color     #4e5669
+set $active-bg-color     #4F5670
 set $inactive-bg-color   #2f343f
-set $inactive-border     #575757
+set $inactive-border     #474D5E
 set $text-color          #f3f4f5
 set $inactive-text-color #747B8C
 set $urgent-bg-color     #E53935
@@ -230,6 +230,10 @@ bindsym XF86AudioPrev exec playerctl previous
 # Sleep
 bindsym XF86Sleep exec i3lock && sudo pm-suspend 
 
+# Launch Program
+bindsym $mod+Ctrl+c exec google-chrome
+bindsym $mod+Ctrl+m exec mpv
+
 # PrintScreen
 bindsym Print exec scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots'
 bindsym --release Shift+Print exec scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -s -e 'mv $f ~/Pictures/Screenshots'
@@ -242,3 +246,4 @@ exec pa-applet
 exec compton -f -D 3 -m 0.92 -e 0.92
 exec spotify
 exec gnome-terminal
+exec xmodmap .Xmodmap
