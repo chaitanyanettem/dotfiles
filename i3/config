@@ -178,7 +178,7 @@ set $active-bg-color     #4F5670
 set $inactive-bg-color   #2f343f
 set $inactive-border     #474D5E
 set $text-color          #f3f4f5
-set $inactive-text-color #747B8C
+set $inactive-text-color #999EAA
 set $urgent-bg-color     #E53935
 
 # window colors
@@ -247,3 +247,5 @@ exec compton -f -D 3 -m 0.92 -e 0.92
 exec spotify
 exec gnome-terminal
 exec xmodmap .Xmodmap
+exec synapse
+exec indicator-cpufreq
