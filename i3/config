@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 200 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
@@ -245,7 +245,7 @@ bindsym Ctrl+Print exec scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -u -e 'mv $f ~/Pictu
 exec nm-applet
 exec xpad -N
 exec pa-applet
-exec compton -f -D 3 -m 0.92 -e 0.92
+exec_always compton -f -D 3 
 exec spotify
 exec gnome-terminal
 exec xmodmap .Xmodmap
