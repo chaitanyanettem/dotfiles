@@ -245,7 +245,7 @@ bindsym Ctrl+Print exec scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -u -e 'mv $f ~/Pictu
 exec nm-applet
 exec xpad -N
 exec pa-applet
-exec_always compton -f -D 3 
+exec compton -f -D 3
 exec spotify
 exec gnome-terminal
 exec xmodmap .Xmodmap
