@@ -175,20 +175,22 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-set $bg-color            #2f343f
-set $active-bg-color     #4F5670
-set $inactive-bg-color   #2f343f
-set $inactive-border     #474D5E
-set $text-color          #f3f4f5
-set $inactive-text-color #999EAA
-set $urgent-bg-color     #E53935
+set $bg-color             #2f343f
+set $active-bg-color      #87CEEB
+set $inactive-bg-color    #3C424F
+set $inactive-border      #69707A
+set $active-text-color    #000000
+set $text-color           #f3f4f5
+set $inactive-text-color  #999EAA
+set $urgent-bg-color      #E53935
+set $inactive-focus-color #9CAFB7
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $active-bg-color   $text-color          $active-bg-color
-client.unfocused        $inactive-border    $inactive-bg-color $inactive-text-color $active-bg-color
-client.focused_inactive $inactive-border    $inactive-bg-color $inactive-text-color $active-bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $active-bg-color
+#                       border                background              text                 indicator
+client.focused          $active-bg-color      $active-bg-color        $active-text-color   $active-bg-color
+client.unfocused        $inactive-bg-color    $bg-color               $text-color          $active-bg-color
+client.focused_inactive $inactive-focus-color $inactive-focus-color   $bg-color            $active-bg-color
+client.urgent           $urgent-bg-color      $urgent-bg-color        $text-color          $active-bg-color
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -235,6 +237,7 @@ bindsym XF86Sleep exec i3lock && sudo pm-suspend
 # Launch Program
 bindsym $mod+Ctrl+c exec google-chrome
 bindsym $mod+Ctrl+m exec mpv
+bindsym $mod+Ctrl+n exec nautilus
 
 # PrintScreen
 bindsym Print exec scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots'
@@ -246,6 +249,7 @@ exec nm-applet
 exec xpad -N
 exec pa-applet
 exec compton -f -D 3
+exec --no-startup-id /usr/lib/unity-settings-daemon                      
 exec spotify
 exec gnome-terminal
 exec xmodmap .Xmodmap
