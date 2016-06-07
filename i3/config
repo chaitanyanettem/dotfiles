@@ -188,8 +188,8 @@ set $inactive-focus-color #9CAFB7
 # window colors
 #                       border                background              text                 indicator
 client.focused          $active-bg-color      $active-bg-color        $active-text-color   $active-bg-color
-client.unfocused        $inactive-bg-color    $bg-color               $text-color          $active-bg-color
-client.focused_inactive $inactive-focus-color $inactive-focus-color   $bg-color            $active-bg-color
+client.unfocused        $inactive-border      $bg-color               $text-color          $active-bg-color
+client.focused_inactive $inactive-border      $inactive-focus-color   $bg-color            $active-bg-color
 client.urgent           $urgent-bg-color      $urgent-bg-color        $text-color          $active-bg-color
 
 
