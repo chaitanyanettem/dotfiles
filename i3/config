@@ -135,6 +135,7 @@ bindsym $mod+Shift+0 move container to workspace $work0
 # default workspaces
 for_window [class="Spotify"] move to workspace $work0
 assign [class="google-chrome"] $work3
+assign [class="Slack"] $work8
 
 # floating
 for_window [class="Pavucontrol"] floating enable
