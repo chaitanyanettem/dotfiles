@@ -254,6 +254,6 @@ exec compton -f -D 3
 exec --no-startup-id /usr/lib/unity-settings-daemon                      
 exec spotify
 exec gnome-terminal
-exec xmodmap .Xmodmap
+exec_always xmodmap ~/.Xmodmap
 exec synapse
 exec indicator-cpufreq
