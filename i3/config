@@ -213,7 +213,7 @@ bar {
 }
 
 # Lockscreen
-bindsym $mod+Ctrl+l exec i3lock --color "$bg-color"
+bindsym $mod+Ctrl+l exec ~/.config/i3/lock.sh ~/.config/screen-lock.png
 
 #Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master 5%+ #increase sound volume
@@ -234,7 +234,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Sleep
-bindsym XF86Sleep exec i3lock && sudo pm-suspend 
+bindsym XF86Sleep exec i3lock --color "$bg-color" && sudo pm-suspend 
+bindsym $mod+XF86Sleep exec i3lock --color "$bg-color" && sudo pm-hibernate 
 
 # Launch Program
 bindsym $mod+Ctrl+c exec google-chrome
