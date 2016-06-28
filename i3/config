@@ -134,7 +134,6 @@ bindsym $mod+Shift+0 move container to workspace $work0
 
 # default workspaces
 for_window [class="Spotify"] move to workspace $work0
-assign [class="google-chrome"] $work3
 assign [class="Slack"] $work8
 assign [class="jetbrains-studio"] $work5
 
@@ -219,7 +218,7 @@ bindsym $mod+Ctrl+l exec ~/.config/i3/lock.sh ~/.config/screen-lock.png
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master 5%+ #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse set Master 5%- #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle #mute sound
-bindsym $mod+XF86AudioLowerVolume exec --no-startup-id pavucontrol
+bindsym Ctrl+$mod+XF86AudioLowerVolume exec --no-startup-id pavucontrol
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2 # increase screen brightness
@@ -233,9 +232,14 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+bindsym $mod+XF86AudioLowerVolume exec playerctl play-pause
+bindsym $mod+XF86AudioRaiseVolume exec playerctl next
+bindsym $mod+XF86AudioMute exec playerctl previous
 # Sleep
-bindsym XF86Sleep exec i3lock --color "$bg-color" && sudo pm-suspend 
-bindsym $mod+XF86Sleep exec i3lock --color "$bg-color" && sudo pm-hibernate 
+bindsym XF86Sleep exec ~/.config/i3/lock-sleep.sh ~/.config/screen-lock.png
+bindsym XF86Launch1 exec ~/.config/i3/lock-sleep.sh ~/.config/screen-lock.png
+bindsym $mod+XF86Sleep exec ~/.config/i3/lock-hibernate.sh ~/.config/screen-lock.png
+bindsym $mod+XF86Launch1 exec ~/.config/i3/lock-hibernate.sh ~/.config/screen-lock.png
 
 # Launch Program
 bindsym $mod+Ctrl+c exec google-chrome
