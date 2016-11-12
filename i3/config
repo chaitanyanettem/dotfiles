@@ -29,6 +29,9 @@ font pango:System San Francisco Display 12
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Prevent focus from moving to next workspace and wrap it within current workspace
+force_focus_wrapping yes
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -105,12 +108,13 @@ set $work1 "1: "
 set $work2 "2: "
 set $work3 "3: "
 set $work4 "4: "
-set $work5 "5: ?"
+set $work5 "5: "
 set $work6 "6: ?"
 set $work7 "7: ?"
-set $work8 "8: ?"
+set $work8 "8: "
 set $work9 "9: ?"
 set $work0 "10: "
+
 
 # switch to workspace
 bindsym $mod+1 workspace $work1
@@ -250,6 +254,7 @@ bindsym $mod+XF86Launch1 exec ~/.config/i3/lock-hibernate.sh ~/.config/screen-lo
 
 # Launch Program
 bindsym $mod+Ctrl+c exec google-chrome
+bindsym $mod+Ctrl+Shift+c exec google-chrome --incognito
 bindsym $mod+Ctrl+m exec mpv
 bindsym $mod+Ctrl+n exec nautilus
 
