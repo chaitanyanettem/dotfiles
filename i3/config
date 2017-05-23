@@ -281,3 +281,4 @@ exec gnome-terminal
 exec xmodmap ~/.Xmodmap
 exec synapse
 exec indicator-cpufreq
+exec dunst
